@@ -1,0 +1,27 @@
+.filters {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh;
+}
+.button {
+  background-color: var(--highlighter);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.button:active {
+  background-color: var(--highlighter-active);
+}
+.button:hover {
+  background-color: var(--highlighter-hover);
+}

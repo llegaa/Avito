@@ -1,16 +1,16 @@
-import { useState } from "react";
-import s from "./App.module.scss";
+import * as style from "./App.module.scss";
 import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import { MainPage } from "./page/MainPage/MainPage";
-import { Element } from "./page/Element/Element";
-
+import { Movie } from "./page/Movie/Movie";
+import {Header} from "./components/Header/Header";
 export const App = () => {
   return (
-    <div>
+    <div className={style.container}>
       <Router>
+          <Header/>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path=":id" element={<Element/>} />
+          <Route path="/movie/:id" element={<Movie/>} />
         </Routes>
       </Router>
     </div>

@@ -1,0 +1,21 @@
+.seasonsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.seasons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.titleSeason {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+}
+
+/*# sourceMappingURL=SeasonList.module.css.map */

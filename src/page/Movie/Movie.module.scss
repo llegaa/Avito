@@ -1,0 +1,54 @@
+.container {
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-x: unset;
+}
+.poster {
+  height: 300px;
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: space-between;
+}
+.back {
+  background-color: var(--highlighter);
+  padding: 10px 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  max-width: 100px;
+}
+.back:hover {
+  background-color: var(--highlighter-hover);
+}
+.back:active {
+  background-color: var(--highlighter-active);
+}
+.title {
+  font-size: 30px;
+  font-weight: 600;
+}
+.addition {
+  color: var(--text-secondary-color);
+  font-size: 18px;
+}
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.description {
+  font-size: 18px;
+}
+.loading {
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

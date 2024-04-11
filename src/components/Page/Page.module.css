@@ -1,0 +1,28 @@
+.pages {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  color: var(--text-secondary-color);
+  font-weight: 900;
+  font-size: 20px;
+}
+.pages button {
+  background-color: var(--highlighter);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+}
+.pages button:active {
+  background-color: var(--highlighter-active);
+}
+.pages button:hover {
+  background-color: var(--highlighter-hover);
+}
+
+.curPage {
+  color: black;
+}
+
+/*# sourceMappingURL=Page.module.css.map */

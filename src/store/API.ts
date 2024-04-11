@@ -1,0 +1,1 @@
+export const PREFIX = "https://api.kinopoisk.dev"

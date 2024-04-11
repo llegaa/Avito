@@ -1,0 +1,18 @@
+.actorsList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.actors {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+.titleActors {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+}

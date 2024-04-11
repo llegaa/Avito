@@ -7,16 +7,8 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[]{
     const isDev = options.mode === 'development'
     return [
         {
-            test: /\.(png|jpg|gif)$/i,
-           dependency: { not: ['url'] },
-            use: [
-              {
-                loader: 'url-loader',
-                options: {
-                  limit: 8192,
-                },
-              },
-            ],
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
         },
         {
             test: /\.tsx?$/,
@@ -40,6 +32,6 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[]{
                 // Compiles Sass to CSS
                 "sass-loader",
             ],
-        }
+        },
         ]
 }

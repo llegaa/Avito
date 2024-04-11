@@ -1,0 +1,20 @@
+.container {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.container img {
+  height: 70px;
+}
+.container .enName {
+  color: var(--text-secondary-color);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=Element.module.css.map */

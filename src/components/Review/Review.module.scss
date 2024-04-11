@@ -1,0 +1,30 @@
+.container {
+  padding: 10px 30px;
+  border-top: 2px solid var(--separator-color);
+}
+.neutral{
+  color: #ffb600;
+}
+.negative {
+  color: #fd1c1c;
+}
+.positive {
+  color: #2a8f2a;
+}
+.button {
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-weight: 700;
+  border: 2px solid var(--highlighter);
+}
+.open {
+  background-color: var(--highlighter);
+  color: white;
+}
+.close {
+  background: none;
+}
+.name {
+  font-size: 18px;
+  font-weight: 700;
+}

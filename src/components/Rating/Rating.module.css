@@ -1,0 +1,10 @@
+.rating {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--highlighter);
+  color: white;
+  font-weight: 700;
+  max-height: 20px;
+}
+
+/*# sourceMappingURL=Rating.module.css.map */
