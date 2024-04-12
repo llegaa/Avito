@@ -6,20 +6,22 @@ import {AppDispatch, RootState} from "../../store/store";
 import searchSlice, {queryParamsActions} from "../../store/searchSlice";
 import {getMovies} from "../../store/searchSlice";
 import {useEffect, useState} from "react";
-import {Doc} from "../../store/doc";
+import {MoviesInterface} from "../../store/interfaces/moviesInterface";
 import {Element} from "../Element/Element";
 import {loadState, saveState} from "../../store/storage";
 
 export function Header() {
     const [active, setActive] = useState(false)
-    const [data, setData] = useState<Doc[]>([])
+    const [data, setData] = useState<MoviesInterface[]>(loadState('pastSearchResults'))
     const dispatch = useDispatch<AppDispatch>()
     const search = useSelector((s: RootState) => s.search)
     useEffect(() => {
         const timeout = setTimeout(() => {
             if (search.search) dispatch(getMovies(search.search));
         }, 1000);
-        if (search.search === '') setData(loadState('pastSearchResults') ?? [])
+        if (search.search === ''){
+            setData(loadState('pastSearchResults') ?? [])
+        }
 
         return () => {
             if (timeout) {
@@ -35,16 +37,19 @@ export function Header() {
         dispatch(queryParamsActions.setSearch(event.target.value))
     }
 
-    const searchClick = (el:Doc) => {
+    const searchClick = (el:MoviesInterface) => {
         saveState(el, 'pastSearchResults')
         setActive(false)
-        console.log(1)
+    }
+    const inputClick= ()=>{
+        setData(loadState('pastSearchResults'))
+        setActive(true)
     }
     return (
         <div className={style.container}>
-            <NavLink to='/'><img src={logo} alt='logo'/></NavLink>
+            <img src={logo} alt='logo'/>
             <div className={style.search}>
-                <input onClick={() => setActive(true)} onChange={onInputChange} className={style.input}/>
+                <input onClick={() => inputClick()} onChange={onInputChange} className={style.input}/>
                 {active && (<>
                     <ul className={style.searchResult}>
                         {data &&

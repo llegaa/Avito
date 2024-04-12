@@ -1,31 +1,31 @@
 .container {
-  padding: 10px 30px;
+  padding: 1rem 3rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   overflow-x: unset;
 }
 
 .poster {
-  height: 300px;
+  height: 30rem;
 }
 
 .info {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 5rem;
   justify-content: space-between;
 }
 
 .back {
   background-color: var(--highlighter);
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   color: white;
   font-weight: 700;
-  font-size: 20px;
-  border-radius: 10px;
+  font-size: 2rem;
+  border-radius: 1rem;
   border: none;
-  max-width: 100px;
+  max-width: 10rem;
 }
 
 .back:hover {
@@ -37,30 +37,45 @@
 }
 
 .title {
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 600;
 }
 
 .addition {
   color: var(--text-secondary-color);
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .mainInfo {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .description {
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .loading {
-  min-height: 400px;
+  min-height: 40rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 650px) {
+  .info {
+    flex-direction: column;
+  }
+  .poster {
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=Movie.module.css.map */

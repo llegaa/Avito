@@ -1,11 +1,11 @@
 :root {
+  font-size: 0.625em;
   --backgrount_gray: #fafafa;
   --text-secondary-color: #5B5B5E;
   --separator-color: #f6f5f5;
   --highlighter: #f86029;
   --highlighter-active: #cc3d0b;
   --highlighter-hover: #e7511b;
-
 }
 body {
   margin: 0;
@@ -16,4 +16,10 @@ body {
 
 code {
   font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (max-width: 650px){
+  :root {
+    font-size: 0.45em;
+  }
 }

@@ -2,14 +2,15 @@ import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import axios, {AxiosError} from "axios";
 import {RootState} from "./store";
 import {PREFIX} from "./API";
-import {Movie} from "./movie";
-import {ReviewInterface} from "./review";
-import {PosterInterface} from "./poster.interface";
-import {Seasons} from "./season.interface";
-import {getOneMovieInitialState} from "./oneMovieInitialState";
+import {MovieInterface} from "./interfaces/movieInterface";
+import {ReviewInterface} from "./interfaces/ReviewInterface";
+import {PosterInterface} from "./interfaces/posterInterface";
+import {Seasons} from "./interfaces/seasonInterface";
+import {getOneMovieInitialState} from "./initialState/oneMovieInitialState";
+import {act} from "react-dom/test-utils";
 
 export interface MoviePage {
-    movie: Movie,
+    movie: MovieInterface,
     review: ReviewInterface,
     posters: PosterInterface,
     seasons: Seasons,
@@ -29,49 +30,81 @@ export interface MoviePage {
 
 const initialState: MoviePage = getOneMovieInitialState()
 
-export const getMovie = createAsyncThunk<Movie, number, { state: RootState }>('v1.4/movie',
-    async (id, thunkAPI) => {
+export const getMovie = createAsyncThunk<MovieInterface, number, { state: RootState }>('v1.4/movie',
+    async (id, {rejectWithValue}) => {
         const token = process.env.REACT_APP_TOKEN;
-        const {data} = await axios.get(`${PREFIX}/v1.4/movie/${id}`, {
-            headers: {
-                'X-API-KEY': token
+        for(let i = 0; i < 3; i++){
+            try {
+                const {data} = await axios.get(`${PREFIX}/v1.4/movie/${id}`, {
+                    headers: {
+                        'X-API-KEY': token
+                    }
+                })
+                return data
+            }catch (e){
+                if (i === 2 || e.name === 'TypeError') {
+                    return rejectWithValue(e);
+                }
             }
-        })
-        return data
+        }
     }
 )
 export const getReview = createAsyncThunk<ReviewInterface, { id:number, curReviewPage: number }, { state: RootState }>('v1.4/review',
-    async ({id, curReviewPage}, thunkAPI) => {
+    async ({id, curReviewPage}, {rejectWithValue}) => {
         const token = process.env.REACT_APP_TOKEN;
-        const {data} = await axios.get(`${PREFIX}/v1.4/review?movieId=${id}&page=${curReviewPage}&limit=3`, {
-            headers: {
-                'X-API-KEY': token
+        for(let i = 0; i < 3; i++){
+            try {
+                const {data} = await axios.get(`${PREFIX}/v1.4/review?movieId=${id}&page=${curReviewPage}&limit=3`, {
+                    headers: {
+                        'X-API-KEY': token
+                    }
+                })
+                return data
+            }catch (e){
+                if (i === 2 || e.name === 'TypeError') {
+                    return rejectWithValue(e);
+                }
             }
-        })
-        return data
+        }
+
     }
 )
 export const getPosters = createAsyncThunk<PosterInterface, number, { state: RootState }>('v1.4/image',
-    async (id, thunkAPI) => {
+    async (id, {rejectWithValue}) => {
         const token = process.env.REACT_APP_TOKEN;
-        const {data} = await axios.get(`${PREFIX}/v1.4/image?page=1&limit=10&movieId=${id}`, {
-            headers: {
-                'X-API-KEY': token
+        for(let i = 0; i < 3; i++){
+            try {
+                const {data} = await axios.get(`${PREFIX}/v1.4/image?page=1&limit=10&movieId=${id}`, {
+                    headers: {
+                        'X-API-KEY': token
+                    }
+                })
+                return data
+            }catch (e){
+                if (i === 2 || e.name === 'TypeError') {
+                    return rejectWithValue(e);
+                }
             }
-        })
-        return data
+        }
     }
 )
 export const getSeasons = createAsyncThunk<Seasons, { id:number, curSeasonPage: number }, { state: RootState }>('v1.4/season',
-    async ({id, curSeasonPage}, thunkAPI) => {
+    async ({id, curSeasonPage}, {rejectWithValue}) => {
         const token = process.env.REACT_APP_TOKEN;
-        const {data} = await axios.get(`${PREFIX}/v1.4/season?page=${curSeasonPage}&limit=10&movieId=${id}`, {
-            headers: {
-                'X-API-KEY': token
+        for(let i = 0; i < 3; i++){
+            try {
+                const {data} = await axios.get(`${PREFIX}/v1.4/season?page=${curSeasonPage}&limit=10&movieId=${id}`, {
+                    headers: {
+                        'X-API-KEY': token
+                    }
+                })
+                return data
+            }catch (e){
+                if (i === 2 || e.name === 'TypeError') {
+                    return rejectWithValue(e);
+                }
             }
-        })
-        console.log(data)
-        return data
+        }
     }
 )
 
@@ -83,30 +116,46 @@ const oneMovieSlice = createSlice({
         builder.addCase(getMovie.fulfilled, (state, action) => {
             state.movie = action.payload
             state.loading.movieLoading = false
+            state.error.movieError = ''
         })
         builder.addCase(getMovie.pending, (state, action) => {
             state.loading.movieLoading = true
         })
+        builder.addCase(getMovie.rejected, (state, action) => {
+            state.error.movieError = action.error.message
+        })
         builder.addCase(getReview.fulfilled, (state, action) => {
             state.review = action.payload
             state.loading.reviewLoading = false
+            state.error.reviewError = ''
         })
         builder.addCase(getReview.pending, (state, action) => {
             state.loading.reviewLoading = true
         })
+        builder.addCase(getReview.rejected, (state, action) => {
+            state.error.reviewError = action.error.message
+        })
         builder.addCase(getPosters.fulfilled, (state, action) => {
             state.posters = action.payload
             state.loading.postersLoading = false
+            state.error.postersError = ''
         })
         builder.addCase(getPosters.pending, (state, action) => {
             state.loading.movieLoading = true
         })
+        builder.addCase(getPosters.rejected, (state, action) => {
+            state.error.postersError = action.error.message
+        })
         builder.addCase(getSeasons.fulfilled, (state, action) => {
             state.seasons = action.payload
             state.loading.seasonLoading = false
+            state.error.seasonError = ''
         })
         builder.addCase(getSeasons.pending, (state, action) => {
             state.loading.seasonLoading = true
+        })
+        builder.addCase(getSeasons.rejected, (state, action) => {
+            state.error.seasonError = action.error.message
         })
     }
 })

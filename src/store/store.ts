@@ -1,16 +1,19 @@
-import {configureStore} from "@reduxjs/toolkit";
-import movies from "./moviesSlice";
+import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import movie from "./oneMovieSlice";
 import queryParams from "./queryParamsSlice"
 import search from "./searchSlice"
+import {moviesAPI} from "./services/MovieSlice";
 
+const rootReducer = combineReducers({
+    movie,
+    queryParams,
+    search,
+    [moviesAPI.reducerPath]: moviesAPI.reducer
+})
 export const store = configureStore({
-    reducer:{
-        movies: movies,
-        movie: movie,
-        queryParams: queryParams,
-        search: search
-    }
+    reducer:rootReducer,
+    middleware: (getDefaultMiddleware)=>
+        getDefaultMiddleware().concat(moviesAPI.middleware)
 })
 
 export type RootState = ReturnType<typeof store.getState>

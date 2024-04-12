@@ -1,4 +1,4 @@
-import {Doc} from "./doc";
+import {MoviesInterface} from "./interfaces/moviesInterface";
 
 export function loadState<T>(key: string):T|undefined{
     try {
@@ -12,7 +12,7 @@ export function loadState<T>(key: string):T|undefined{
         return undefined
     }
 }
-export function saveState(state: Doc, key: string) {
+export function saveState(state: MoviesInterface, key: string) {
     console.log("pastResults")
     let pastResults = loadState(key)
     if(pastResults && Array.isArray(pastResults)){

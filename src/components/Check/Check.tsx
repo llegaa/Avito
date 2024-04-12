@@ -15,7 +15,7 @@ export function Check({text, list, onClick, error, loading}: CheckboxProps) {
         </div>
             {checked && (
                 <div className={style.list}>
-                    {!loading ?
+                    {!error ? (!loading ?
                         list.map((el, ind) => (
                             <div onClick={(event) => {
                                 onClick(event.currentTarget.innerHTML);
@@ -24,7 +24,7 @@ export function Check({text, list, onClick, error, loading}: CheckboxProps) {
                                 {el.name}
                             </div>
                         ))
-                        : <div>Loading...</div>
+                        : <div>Loading...</div>) : <div>{error}</div>
                     }
                 </div>
             )}

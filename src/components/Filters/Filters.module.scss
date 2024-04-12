@@ -1,27 +1,43 @@
 .filters {
-  padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 0.5rem;
 }
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 90vh;
+  height: 80vh;
+  padding: 3rem;
 }
 .button {
   background-color: var(--highlighter);
   border: none;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   color: white;
   font-weight: 700;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 .button:active {
   background-color: var(--highlighter-active);
 }
 .button:hover {
   background-color: var(--highlighter-hover);
+}
+
+@media screen and (max-width: 500px) {
+  .filters {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .container {
+    height: unset;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .button {
+    margin-top: 1rem;
+  }
 }

@@ -2,17 +2,21 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 .part {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 5rem;
 }
 .information {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   justify-content: start;
   text-align: start;
+}
+.name {
+  font-size: 1.6rem;
+  font-weight: 700;
 }

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Doc} from "../../store/review";
+import {Doc} from "../../store/interfaces/ReviewInterface";
 import cn from "classnames";
 import * as style from "./Review.module.scss"
 import {fail} from "assert";
@@ -31,7 +31,7 @@ export function Review({review}: Interface){
                 [style.negative]: review.type==='Негативный',
                 [style.positive]: review.type==='Позитивный',
             })}>{review.author}</div>
-            <div dangerouslySetInnerHTML={{ __html: reduction(review.review) }} />
+            <div className={style.review} dangerouslySetInnerHTML={{ __html: reduction(review.review) }} />
             <button className={cn(style.button, {
                 [style.open]: open,
                 [style.close]: !open,

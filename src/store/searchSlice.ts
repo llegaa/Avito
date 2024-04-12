@@ -1,6 +1,5 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {movies} from "./moviesSlice";
-import {Doc} from "./doc";
+import {MoviesInterface} from "./interfaces/moviesInterface";
 import {RootState} from "./store";
 import axios from "axios";
 import {PREFIX} from "./API";
@@ -8,7 +7,7 @@ import {PREFIX} from "./API";
 
 export interface queryParams {
     search?: string
-    docs: Doc[]
+    docs: MoviesInterface[]
     total: number,
     limit: number,
     page: number,

@@ -8,25 +8,5 @@ const root = document.getElementById('root')
 if(!root) {
     throw new Error('root not found')
 }
-// const router = createBrowserRouter([
-//     {
-//         path: '/',
-//         element: <>ggg</>,
-//         children: [
-//             {
-//                 path: '/',
-//                 element: <MainPage/>
-//             },
-//             {
-//                 path: '/:id',
-//                 element: <Movie/>
-//             }
-//             ]
-//
-//     },
-//     {
-//         path: '*',
-//         element: <>Error</>
-//     }
-// ])
+
 ReactDOM.render(  <Provider store={store}><App/></Provider>, root);

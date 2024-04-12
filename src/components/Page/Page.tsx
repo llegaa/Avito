@@ -48,8 +48,8 @@ export function Page({curPage, allPages, setCurPage}: {
             <button onClick={handlePrevPage}>{'<'}</button>
             {pages.map((el) => <div className={cn({[style.curPage]: el === curPage})} onClick={() => setPage(el)}
                                     key={el}>{el}</div>)}
-            {curPage + 2 < allPages && '...'}
-            {curPage + 2 < allPages && <div onClick={() => setPage(allPages)}>{allPages}</div>}
+            {curPage + 2 < allPages && allPages > 4 && '...'}
+            {curPage + 2 < allPages && allPages > 4 && <div onClick={() => setPage(allPages)}>{allPages}</div>}
             <button onClick={handleNextPage}>{'>'}</button>
         </div>
     )

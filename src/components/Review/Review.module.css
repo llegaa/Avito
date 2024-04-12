@@ -1,6 +1,6 @@
 .container {
-  padding: 10px 30px;
-  border-top: 2px solid var(--separator-color);
+  padding: 1rem 3rem;
+  border-top: 0.2rem solid var(--separator-color);
 }
 
 .neutral {
@@ -16,10 +16,10 @@
 }
 
 .button {
-  border-radius: 10px;
-  padding: 5px 10px;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
   font-weight: 700;
-  border: 2px solid var(--highlighter);
+  border: 0.2rem solid var(--highlighter);
 }
 
 .open {
@@ -32,8 +32,12 @@
 }
 
 .name {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 700;
+}
+
+.review {
+  font-size: 1.6rem;
 }
 
 /*# sourceMappingURL=Review.module.css.map */

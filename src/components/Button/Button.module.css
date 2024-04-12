@@ -1,8 +1,8 @@
 .button {
-  padding: 20px;
+  padding: 2rem;
   background: none;
   border: none;
-  border-bottom: 2px solid var(--separator-color);
+  border-bottom: 0.2rem solid var(--separator-color);
   width: 100%;
 }
 .button img {
@@ -11,7 +11,7 @@
 
 .button:hover {
   background-color: #f6f5f5;
-  border-radius: 20px;
+  border-radius: 2rem;
 }
 
 /*# sourceMappingURL=Button.module.css.map */

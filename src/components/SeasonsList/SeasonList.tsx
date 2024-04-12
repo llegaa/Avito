@@ -1,4 +1,4 @@
-import {Seasons} from "../../store/season.interface";
+import {Seasons} from "../../store/interfaces/seasonInterface";
 import {Element} from "../Element/Element";
 import {Page} from "../Page/Page";
 import React from "react";

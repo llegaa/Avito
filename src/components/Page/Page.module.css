@@ -1,18 +1,18 @@
 .pages {
   display: flex;
   flex-direction: row;
-  gap: 5px;
+  gap: 0.5rem;
   align-items: center;
   color: var(--text-secondary-color);
   font-weight: 900;
-  font-size: 20px;
+  font-size: 2rem;
 }
 .pages button {
   background-color: var(--highlighter);
   border: none;
-  border-radius: 10px;
+  border-radius: 1rem;
   color: white;
-  padding: 10px;
+  padding: 1rem;
 }
 .pages button:active {
   background-color: var(--highlighter-active);

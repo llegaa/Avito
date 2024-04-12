@@ -1,4 +1,5 @@
-import {fields} from "../../store/moviesSlice";
+import {fields} from "../../store/interfaces/moviesInterface";
+
 
 export interface CheckboxProps {
     text: string
