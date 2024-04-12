@@ -9,6 +9,7 @@ export interface PosterDocsInterface {
     updatedAt: string,
     createdAt: string
 }
+
 export interface PosterInterface {
     docs: PosterDocsInterface[],
     total: number,

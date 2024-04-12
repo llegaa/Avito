@@ -1,68 +1,68 @@
 export interface MovieInterface {
-    status:              null;
-    externalId:          ExternalID;
-    rating:              Rating;
-    votes:               Rating;
-    backdrop:            Backdrop;
-    movieLength:         number;
-    images:              Images;
+    status: null;
+    externalId: ExternalID;
+    rating: Rating;
+    votes: Rating;
+    backdrop: Backdrop;
+    movieLength: number;
+    images: Images;
     productionCompanies: ProductionCompany[];
-    spokenLanguages:     SpokenLanguage[];
-    id:                  number;
-    type:                string;
-    name:                string;
-    description:         string;
-    distributors:        Distributors;
-    premiere:            Premiere;
-    slogan:              string;
-    year:                number;
-    budget:              Budget;
-    poster:              Backdrop;
-    facts:               Fact[];
-    genres:              Country[];
-    countries:           Country[];
-    seasonsInfo:         any[];
-    persons:             Person[];
-    lists:               string[];
-    typeNumber:          number;
-    alternativeName:     string;
-    enName:              null;
-    names:               Name[];
-    updatedAt:           string;
-    sequelsAndPrequels:  SequelsAndPrequel[];
-    similarMovies:       SequelsAndPrequel[];
-    imagesInfo:          ImagesInfo;
-    ratingMpaa:          string;
-    shortDescription:    string;
-    technology:          Technology;
-    ticketsOnSale:       boolean;
-    fees:                Fees;
-    ageRating:           number;
-    logo:                Logo;
-    watchability:        Watchability;
-    top10:               null;
-    top250:              number;
-    audience:            Audience[];
-    deletedAt:           null;
-    isSeries:            boolean;
-    seriesLength:        null;
-    totalSeriesLength:   null;
-    networks:            null;
-    videos:              Videos;
+    spokenLanguages: SpokenLanguage[];
+    id: number;
+    type: string;
+    name: string;
+    description: string;
+    distributors: Distributors;
+    premiere: Premiere;
+    slogan: string;
+    year: number;
+    budget: Budget;
+    poster: Backdrop;
+    facts: Fact[];
+    genres: Country[];
+    countries: Country[];
+    seasonsInfo: any[];
+    persons: Person[];
+    lists: string[];
+    typeNumber: number;
+    alternativeName: string;
+    enName: null;
+    names: Name[];
+    updatedAt: string;
+    sequelsAndPrequels: SequelsAndPrequel[];
+    similarMovies: SequelsAndPrequel[];
+    imagesInfo: ImagesInfo;
+    ratingMpaa: string;
+    shortDescription: string;
+    technology: Technology;
+    ticketsOnSale: boolean;
+    fees: Fees;
+    ageRating: number;
+    logo: Logo;
+    watchability: Watchability;
+    top10: null;
+    top250: number;
+    audience: Audience[];
+    deletedAt: null;
+    isSeries: boolean;
+    seriesLength: null;
+    totalSeriesLength: null;
+    networks: null;
+    videos: Videos;
 }
 
 export interface Audience {
-    count:   number;
+    count: number;
     country: string;
 }
 
 export interface Backdrop {
-    url:        string;
+    url: string;
     previewUrl: string;
 }
 
 export interface Budget {
-    value:    number;
+    value: number;
     currency: string;
 }
 
@@ -71,7 +71,7 @@ export interface Country {
 }
 
 export interface Distributors {
-    distributor:        string;
+    distributor: string;
     distributorRelease: string;
 }
 
@@ -82,23 +82,22 @@ export interface ExternalID {
 }
 
 export interface Fact {
-    value:   string;
-    type:    string;
+    value: string;
+    type: string;
     spoiler: boolean;
 }
 
 
-
 export interface Fees {
-    world:  Budget;
+    world: Budget;
     russia: Budget;
-    usa:    Budget;
+    usa: Budget;
 }
 
 export interface Images {
-    postersCount:   number;
+    postersCount: number;
     backdropsCount: number;
-    framesCount:    number;
+    framesCount: number;
 }
 
 export interface ImagesInfo {
@@ -110,62 +109,62 @@ export interface Logo {
 }
 
 export interface Name {
-    name:      string;
+    name: string;
     language?: string;
-    type?:     null;
+    type?: null;
 }
 
 export interface Person {
-    id:           number;
-    photo:        string;
-    name:         string;
-    enName:       null | string;
-    description:  null | string;
-    profession:   string;
+    id: number;
+    photo: string;
+    name: string;
+    enName: null | string;
+    description: null | string;
+    profession: string;
     enProfession: string;
 }
 
 export interface Premiere {
-    world:  string;
+    world: string;
     russia: string;
     bluray: string;
-    dvd:    string;
+    dvd: string;
 }
 
 export interface ProductionCompany {
-    name:       string;
-    url:        string;
+    name: string;
+    url: string;
     previewUrl: string;
 }
 
 export interface Rating {
-    kp:                 number;
-    imdb:               number;
-    filmCritics:        number;
+    kp: number;
+    imdb: number;
+    filmCritics: number;
     russianFilmCritics: number;
-    await:              number | null;
+    await: number | null;
 }
 
 export interface SequelsAndPrequel {
-    id:              number;
-    name:            string;
+    id: number;
+    name: string;
     alternativeName: string;
-    enName:          null;
-    type:            string;
-    poster:          Backdrop;
-    rating:          Rating;
-    year:            number;
+    enName: null;
+    type: string;
+    poster: Backdrop;
+    rating: Rating;
+    year: number;
 }
 
 
 export interface SpokenLanguage {
-    name:   string;
+    name: string;
     nameEn: string;
 }
 
 export interface Technology {
     hasImax: boolean;
-    has3D:   boolean;
+    has3D: boolean;
 }
 
 export interface Videos {
@@ -173,7 +172,7 @@ export interface Videos {
 }
 
 export interface Trailer {
-    url:  string;
+    url: string;
     name: string;
     site: string;
     type: string;

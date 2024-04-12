@@ -7,8 +7,10 @@
   --highlighter-active: #cc3d0b;
   --highlighter-hover: #e7511b;
 }
+
 body {
   margin: 0;
+
   div {
     font-family: "Montserrat", sans-serif;
   }
@@ -18,7 +20,7 @@ code {
   font-family: "Montserrat", sans-serif;
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 650px) {
   :root {
     font-size: 0.45em;
   }

@@ -7,20 +7,19 @@ import {ReviewInterface} from "./interfaces/ReviewInterface";
 import {PosterInterface} from "./interfaces/posterInterface";
 import {Seasons} from "./interfaces/seasonInterface";
 import {getOneMovieInitialState} from "./initialState/oneMovieInitialState";
-import {act} from "react-dom/test-utils";
 
 export interface MoviePage {
     movie: MovieInterface,
     review: ReviewInterface,
     posters: PosterInterface,
     seasons: Seasons,
-    loading : {
+    loading: {
         movieLoading: boolean,
         reviewLoading: boolean,
         postersLoading: boolean,
         seasonLoading: boolean
     },
-    error : {
+    error: {
         movieError: string,
         reviewError: string,
         postersError: string,
@@ -33,7 +32,7 @@ const initialState: MoviePage = getOneMovieInitialState()
 export const getMovie = createAsyncThunk<MovieInterface, number, { state: RootState }>('v1.4/movie',
     async (id, {rejectWithValue}) => {
         const token = process.env.REACT_APP_TOKEN;
-        for(let i = 0; i < 3; i++){
+        for (let i = 0; i < 3; i++) {
             try {
                 const {data} = await axios.get(`${PREFIX}/v1.4/movie/${id}`, {
                     headers: {
@@ -41,7 +40,7 @@ export const getMovie = createAsyncThunk<MovieInterface, number, { state: RootSt
                     }
                 })
                 return data
-            }catch (e){
+            } catch (e) {
                 if (i === 2 || e.name === 'TypeError') {
                     return rejectWithValue(e);
                 }
@@ -49,10 +48,12 @@ export const getMovie = createAsyncThunk<MovieInterface, number, { state: RootSt
         }
     }
 )
-export const getReview = createAsyncThunk<ReviewInterface, { id:number, curReviewPage: number }, { state: RootState }>('v1.4/review',
+export const getReview = createAsyncThunk<ReviewInterface, { id: number, curReviewPage: number }, {
+    state: RootState
+}>('v1.4/review',
     async ({id, curReviewPage}, {rejectWithValue}) => {
         const token = process.env.REACT_APP_TOKEN;
-        for(let i = 0; i < 3; i++){
+        for (let i = 0; i < 3; i++) {
             try {
                 const {data} = await axios.get(`${PREFIX}/v1.4/review?movieId=${id}&page=${curReviewPage}&limit=3`, {
                     headers: {
@@ -60,7 +61,7 @@ export const getReview = createAsyncThunk<ReviewInterface, { id:number, curRevie
                     }
                 })
                 return data
-            }catch (e){
+            } catch (e) {
                 if (i === 2 || e.name === 'TypeError') {
                     return rejectWithValue(e);
                 }
@@ -72,7 +73,7 @@ export const getReview = createAsyncThunk<ReviewInterface, { id:number, curRevie
 export const getPosters = createAsyncThunk<PosterInterface, number, { state: RootState }>('v1.4/image',
     async (id, {rejectWithValue}) => {
         const token = process.env.REACT_APP_TOKEN;
-        for(let i = 0; i < 3; i++){
+        for (let i = 0; i < 3; i++) {
             try {
                 const {data} = await axios.get(`${PREFIX}/v1.4/image?page=1&limit=10&movieId=${id}`, {
                     headers: {
@@ -80,7 +81,7 @@ export const getPosters = createAsyncThunk<PosterInterface, number, { state: Roo
                     }
                 })
                 return data
-            }catch (e){
+            } catch (e) {
                 if (i === 2 || e.name === 'TypeError') {
                     return rejectWithValue(e);
                 }
@@ -88,10 +89,12 @@ export const getPosters = createAsyncThunk<PosterInterface, number, { state: Roo
         }
     }
 )
-export const getSeasons = createAsyncThunk<Seasons, { id:number, curSeasonPage: number }, { state: RootState }>('v1.4/season',
+export const getSeasons = createAsyncThunk<Seasons, { id: number, curSeasonPage: number }, {
+    state: RootState
+}>('v1.4/season',
     async ({id, curSeasonPage}, {rejectWithValue}) => {
         const token = process.env.REACT_APP_TOKEN;
-        for(let i = 0; i < 3; i++){
+        for (let i = 0; i < 3; i++) {
             try {
                 const {data} = await axios.get(`${PREFIX}/v1.4/season?page=${curSeasonPage}&limit=10&movieId=${id}`, {
                     headers: {
@@ -99,7 +102,7 @@ export const getSeasons = createAsyncThunk<Seasons, { id:number, curSeasonPage: 
                     }
                 })
                 return data
-            }catch (e){
+            } catch (e) {
                 if (i === 2 || e.name === 'TypeError') {
                     return rejectWithValue(e);
                 }

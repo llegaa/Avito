@@ -1,72 +1,72 @@
 export interface moviesListInterface {
-    docs:  MoviesInterface[];
+    docs: MoviesInterface[];
     total: number;
     limit: number;
-    page:  number;
+    page: number;
     pages: number;
 }
 
 export interface MoviesInterface {
-    id:                 number;
-    externalId:         ExternalID;
-    name:               string;
-    alternativeName:    string;
-    enName:             string;
-    names:              Name[];
-    type:               string;
-    typeNumber:         number;
-    year:               number;
-    description:        string;
-    shortDescription:   string;
-    slogan:             string;
-    status:             string;
-    facts:              Fact[];
-    rating:             Rating;
-    votes:              Votes;
-    movieLength:        number;
-    ratingMpaa:         string;
-    ageRating:          number;
-    logo:               Logo;
-    poster:             Backdrop;
-    backdrop:           Backdrop;
-    videos:             Videos;
-    genres:             Country[];
-    countries:          Country[];
-    persons:            Person[];
-    reviewInfo:         ReviewInfo;
-    seasonsInfo:        SeasonsInfo[];
-    budget:             Budget;
-    fees:               Fees;
-    premiere:           Premiere;
-    similarMovies:      SequelsAndPrequel[];
+    id: number;
+    externalId: ExternalID;
+    name: string;
+    alternativeName: string;
+    enName: string;
+    names: Name[];
+    type: string;
+    typeNumber: number;
+    year: number;
+    description: string;
+    shortDescription: string;
+    slogan: string;
+    status: string;
+    facts: Fact[];
+    rating: Rating;
+    votes: Votes;
+    movieLength: number;
+    ratingMpaa: string;
+    ageRating: number;
+    logo: Logo;
+    poster: Backdrop;
+    backdrop: Backdrop;
+    videos: Videos;
+    genres: Country[];
+    countries: Country[];
+    persons: Person[];
+    reviewInfo: ReviewInfo;
+    seasonsInfo: SeasonsInfo[];
+    budget: Budget;
+    fees: Fees;
+    premiere: Premiere;
+    similarMovies: SequelsAndPrequel[];
     sequelsAndPrequels: SequelsAndPrequel[];
-    watchability:       Watchability;
-    releaseYears:       ReleaseYear[];
-    top10:              number;
-    top250:             number;
-    ticketsOnSale:      boolean;
-    totalSeriesLength:  number;
-    seriesLength:       number;
-    isSeries:           boolean;
-    audience:           Audience[];
-    lists:              string[];
-    networks:           Networks;
-    updatedAt:          Date;
-    createdAt:          Date;
+    watchability: Watchability;
+    releaseYears: ReleaseYear[];
+    top10: number;
+    top250: number;
+    ticketsOnSale: boolean;
+    totalSeriesLength: number;
+    seriesLength: number;
+    isSeries: boolean;
+    audience: Audience[];
+    lists: string[];
+    networks: Networks;
+    updatedAt: Date;
+    createdAt: Date;
 }
 
 export interface Audience {
-    count:   number;
+    count: number;
     country: string;
 }
 
 export interface Backdrop {
-    url:        string;
+    url: string;
     previewUrl: string;
 }
 
 export interface Budget {
-    value:    number;
+    value: number;
     currency: string;
 }
 
@@ -81,15 +81,15 @@ export interface ExternalID {
 }
 
 export interface Fact {
-    value:   string;
-    type:    string;
+    value: string;
+    type: string;
     spoiler: boolean;
 }
 
 export interface Fees {
-    world:  Budget;
+    world: Budget;
     russia: Budget;
-    usa:    Budget;
+    usa: Budget;
 }
 
 export interface Logo {
@@ -97,9 +97,9 @@ export interface Logo {
 }
 
 export interface Name {
-    name:     string;
+    name: string;
     language: string;
-    type:     string;
+    type: string;
 }
 
 export interface Networks {
@@ -112,59 +112,59 @@ export interface NetworksItem {
 }
 
 export interface Person {
-    id:           number;
-    photo:        string;
-    name:         string;
-    enName:       string;
-    description:  string;
-    profession:   string;
+    id: number;
+    photo: string;
+    name: string;
+    enName: string;
+    description: string;
+    profession: string;
     enProfession: string;
 }
 
 export interface Premiere {
     country: string;
-    world:   Date;
-    russia:  Date;
+    world: Date;
+    russia: Date;
     digital: string;
-    cinema:  Date;
-    bluray:  string;
-    dvd:     string;
+    cinema: Date;
+    bluray: string;
+    dvd: string;
 }
 
 export interface Rating {
-    kp:                 number;
-    imdb:               number;
-    tmdb:               number;
-    filmCritics:        number;
+    kp: number;
+    imdb: number;
+    tmdb: number;
+    filmCritics: number;
     russianFilmCritics: number;
-    await:              number;
+    await: number;
 }
 
 export interface ReleaseYear {
     start: number;
-    end:   number;
+    end: number;
 }
 
 export interface ReviewInfo {
-    count:         number;
+    count: number;
     positiveCount: number;
-    percentage:    string;
+    percentage: string;
 }
 
 export interface SeasonsInfo {
-    number:        number;
+    number: number;
     episodesCount: number;
 }
 
 export interface SequelsAndPrequel {
-    id:              number;
-    name:            string;
-    enName:          string;
+    id: number;
+    name: string;
+    enName: string;
     alternativeName: string;
-    type:            string;
-    poster:          Backdrop;
-    rating:          Rating;
-    year:            number;
+    type: string;
+    poster: Backdrop;
+    rating: Rating;
+    year: number;
 }
 
 export interface Videos {
@@ -172,7 +172,7 @@ export interface Videos {
 }
 
 export interface Trailer {
-    url:  string;
+    url: string;
     name: string;
     site: string;
     size: number;
@@ -180,12 +180,12 @@ export interface Trailer {
 }
 
 export interface Votes {
-    kp:                 string;
-    imdb:               number;
-    tmdb:               number;
-    filmCritics:        number;
+    kp: string;
+    imdb: number;
+    tmdb: number;
+    filmCritics: number;
     russianFilmCritics: number;
-    await:              number;
+    await: number;
 }
 
 export interface Watchability {
@@ -195,7 +195,7 @@ export interface Watchability {
 export interface WatchabilityItem {
     name: string;
     logo: Logo;
-    url:  string;
+    url: string;
 }
 
 export interface fields {

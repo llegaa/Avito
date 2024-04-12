@@ -1,12 +1,7 @@
 import React from "react";
 import * as style from "./Element.module.scss"
+import {ElementProps} from "./ElementInterface";
 
-interface ElementProps {
-    id: number
-    photo: string
-    title: string
-    addition: string|number
-}
 
 export function Element(element: ElementProps) {
     return (

@@ -5,20 +5,24 @@
   flex-direction: row;
   gap: 5rem;
   align-items: center;
+
   img {
     height: 5rem;
   }
+
   a {
     text-decoration: none;
     color: inherit;
   }
 }
+
 .input {
   height: 3rem;
   border-radius: 1rem;
   width: 100%;
   padding: 0 1rem;
 }
+
 .input:focus {
   outline: none;
 }
@@ -36,18 +40,22 @@
   box-sizing: border-box;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 }
+
 .searchResult li {
   padding: 0.5rem;
   border-radius: 1rem;
   cursor: pointer;
 }
+
 .searchResult li:hover {
   background-color: lightgray;
 }
+
 .search {
   position: relative;
   width: 100%
 }
+
 .background {
   z-index: 1;
   position: fixed;
@@ -57,7 +65,7 @@
   top: 0;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) {
   .search {
     position: static;
   }

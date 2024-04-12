@@ -6,6 +6,7 @@
   color: var(--text-secondary-color);
   font-weight: 900;
   font-size: 2rem;
+
   button {
     background-color: var(--highlighter);
     border: none;
@@ -13,13 +14,16 @@
     color: white;
     padding: 1rem;
   }
+
   button:active {
     background-color: var(--highlighter-active);
   }
+
   button:hover {
     background-color: var(--highlighter-hover);
   }
 }
+
 .curPage {
   color: black;
 }

@@ -3,7 +3,7 @@ import * as style from "./Header.module.scss"
 import logo from "../../assets/logo.svg"
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../store/store";
-import searchSlice, {queryParamsActions} from "../../store/searchSlice";
+import {queryParamsActions} from "../../store/searchSlice";
 import {getMovies} from "../../store/searchSlice";
 import {useEffect, useState} from "react";
 import {MoviesInterface} from "../../store/interfaces/moviesInterface";
@@ -19,7 +19,7 @@ export function Header() {
         const timeout = setTimeout(() => {
             if (search.search) dispatch(getMovies(search.search));
         }, 1000);
-        if (search.search === ''){
+        if (search.search === '') {
             setData(loadState('pastSearchResults') ?? [])
         }
 
@@ -37,11 +37,11 @@ export function Header() {
         dispatch(queryParamsActions.setSearch(event.target.value))
     }
 
-    const searchClick = (el:MoviesInterface) => {
+    const searchClick = (el: MoviesInterface) => {
         saveState(el, 'pastSearchResults')
         setActive(false)
     }
-    const inputClick= ()=>{
+    const inputClick = () => {
         setData(loadState('pastSearchResults'))
         setActive(true)
     }
@@ -56,9 +56,9 @@ export function Header() {
                             data.map((el, index) => (
                                 <li key={index} onClick={() => searchClick(el)}>
                                     <NavLink key={el.id} to={"/movie/" + el.id}><Element id={el.id}
-                                                                                   photo={el.poster.previewUrl}
-                                                                                   title={el.name}
-                                                                                   addition={String(el.year)}/></NavLink>
+                                                                                         photo={el.poster.previewUrl}
+                                                                                         title={el.name}
+                                                                                         addition={String(el.year)}/></NavLink>
                                 </li>
                             ))}
                     </ul>

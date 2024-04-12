@@ -1,16 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import * as s from './Slider.module.scss'
 import debounce from './debounce';
 import {Link} from "react-router-dom";
+import {CarouselProps} from "./SliderInterface";
 
-type CarouselProps = {
-    slides: {
-        id: number|null,
-        url: string
-    }[];
-}
 
-const Carousel = ({ slides }: CarouselProps) => {
+const Carousel = ({slides}: CarouselProps) => {
     const rootRef = useRef<HTMLDivElement | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [activeSlide, setActiveSlide] = useState(0);
@@ -50,9 +45,9 @@ const Carousel = ({ slides }: CarouselProps) => {
                 <div ref={containerRef} className={s.container}>
                     {
                         slides.map((slide, index) => (
-                            slide.id ? ( <Link to={`/movie/${slide.id}`} key={index} className={s.slide}>
+                            slide.id ? (<Link to={`/movie/${slide.id}`} key={index} className={s.slide}>
                                 <img src={slide.url} alt="постер" loading="lazy"/>
-                            </Link>): (<div key={index} className={s.slide}>
+                            </Link>) : (<div key={index} className={s.slide}>
                                 <img src={slide.url} alt="постер" loading="lazy"/>
                             </div>)
                         ))

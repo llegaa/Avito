@@ -1,38 +1,34 @@
 import {MoviesInterface} from "./interfaces/moviesInterface";
 
-export function loadState<T>(key: string):T|undefined{
+export function loadState<T>(key: string): T | undefined {
     try {
         const jsonState = localStorage.getItem(key)
-        if(!jsonState){
+        if (!jsonState) {
             return undefined
         }
         return JSON.parse(jsonState)
-    }catch (e) {
-        console.log(e)
+    } catch (e) {
         return undefined
     }
 }
+
 export function saveState(state: MoviesInterface, key: string) {
-    console.log("pastResults")
     let pastResults = loadState(key)
-    if(pastResults && Array.isArray(pastResults)){
-        for(let i= 0; i<pastResults.length; i++){
-            if(state.id===pastResults[i].id){
+    if (pastResults && Array.isArray(pastResults)) {
+        for (let i = 0; i < pastResults.length; i++) {
+            if (state.id === pastResults[i].id) {
                 pastResults.splice(i, 1);
-                console.log(pastResults)
                 pastResults.unshift(state)
-                console.log(pastResults)
                 return
             }
         }
-        if(pastResults.length>6){
+        if (pastResults.length > 6) {
             pastResults.pop()
         }
         pastResults.unshift(state)
-    }else{
+    } else {
         pastResults = [state]
     }
-    console.log(pastResults)
     const stringState = JSON.stringify(pastResults)
     localStorage.setItem(key, stringState)
 }

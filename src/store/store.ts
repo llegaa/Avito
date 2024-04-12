@@ -2,7 +2,7 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import movie from "./oneMovieSlice";
 import queryParams from "./queryParamsSlice"
 import search from "./searchSlice"
-import {moviesAPI} from "./services/MovieSlice";
+import {moviesAPI} from "./services/movieSlice";
 
 const rootReducer = combineReducers({
     movie,
@@ -11,8 +11,8 @@ const rootReducer = combineReducers({
     [moviesAPI.reducerPath]: moviesAPI.reducer
 })
 export const store = configureStore({
-    reducer:rootReducer,
-    middleware: (getDefaultMiddleware)=>
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(moviesAPI.middleware)
 })
 

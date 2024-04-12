@@ -1,15 +1,9 @@
-import {Seasons} from "../../store/interfaces/seasonInterface";
 import {Element} from "../Element/Element";
 import {Page} from "../Page/Page";
 import React from "react";
 import * as style from "./SeasonList.module.scss"
-import {Title} from "../Title/Title";
+import {SeasonListProps} from "./SeasonsListInterface";
 
-interface SeasonListProps {
-    seasons: Seasons,
-    curSeasonPage: number,
-    setCurSeasonPage: (numder: number) => void
-}
 
 export function SeasonList({seasons, curSeasonPage, setCurSeasonPage}: SeasonListProps) {
     return (

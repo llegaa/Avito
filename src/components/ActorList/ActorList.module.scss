@@ -5,12 +5,14 @@
   flex-wrap: wrap;
   width: 100%;
 }
+
 .actors {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   justify-content: center;
 }
+
 .titleActors {
   text-align: center;
   font-size: 2.4rem;
@@ -18,8 +20,8 @@
   color: var(--text-secondary-color);
 }
 
-@media screen and (max-width: 400px){
-  .actorsList{
+@media screen and (max-width: 400px) {
+  .actorsList {
     flex-direction: column;
   }
 }

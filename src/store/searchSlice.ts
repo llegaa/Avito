@@ -13,17 +13,18 @@ export interface queryParams {
     page: number,
     pages: number,
 }
+
 const queryParam = new URLSearchParams(location.search);
 const initialState: queryParams = {
     search: "",
-    docs:[],
+    docs: [],
     total: 0,
-    limit:10,
-    page:1,
-    pages:1
+    limit: 10,
+    page: 1,
+    pages: 1
 }
-export const getMovies = createAsyncThunk<queryParams, string, {state: RootState}>('v1.4/movie/search',
-    async (search, thunkAPI)=>{
+export const getMovies = createAsyncThunk<queryParams, string, { state: RootState }>('v1.4/movie/search',
+    async (search, thunkAPI) => {
         const token = process.env.REACT_APP_TOKEN;
         const {data} = await axios.get(`${PREFIX}/v1.4/movie/search?page=1&limit=7&query=${search}`, {
             headers: {

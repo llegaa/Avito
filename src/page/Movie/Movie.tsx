@@ -49,7 +49,8 @@ export function Movie() {
                         <div className={style.infoRow}>
                             <div>
                                 <div className={style.title}>{movie.name ?? movie.alternativeName}({movie.year})</div>
-                                <div className={style.addition}>{movie.alternativeName && movie.alternativeName} {movie.ageRating !== null ? `${movie.ageRating}+` : ''}</div>
+                                <div
+                                    className={style.addition}>{movie.alternativeName && movie.alternativeName} {movie.ageRating !== null ? `${movie.ageRating}+` : ''}</div>
                             </div>
                             {movie.rating && <Rating rating={movie.rating.kp}/>}
                         </div>

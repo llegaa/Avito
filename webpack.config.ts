@@ -7,7 +7,8 @@ import {BuildMode, BuildPaths} from "./config/build/types/types";
 interface EnvVariables {
     mode: BuildMode;
 }
-export default (env: EnvVariables)=>{
+
+export default (env: EnvVariables) => {
     const paths: BuildPaths = {
         output: path.resolve(__dirname, 'build'),
         entry: path.resolve(__dirname, 'src', 'index.tsx'),

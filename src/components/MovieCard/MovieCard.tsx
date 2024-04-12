@@ -3,13 +3,11 @@ import * as style from "./MovieCard.module.scss";
 import {Rating} from "../Rating/Rating";
 import {Link} from "react-router-dom";
 import React from "react";
-import {MoviesInterface} from "../../store/interfaces/moviesInterface";
+import {MovieCardProps} from "./MovieCardInterface";
 
-interface MovieCardProps {
-    el: MoviesInterface
-}
-export function MovieCard({el}:MovieCardProps) {
-    return(
+
+export function MovieCard({el}: MovieCardProps) {
+    return (
         <Link key={el.id} to={`/movie/${el.id}`}>
             <Button>
                 <div className={style.container}>
