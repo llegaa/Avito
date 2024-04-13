@@ -28,7 +28,8 @@ export const moviesAPI = createApi({
                 url: `/v1.4/movie?page=${page}&limit=${countElement}${country !== null ? `&countries.name=${country}` : ''}${genre !== null ? `&genres.name=${genre}` : ''}${year !== null ? `&year=${year}` : ''}`,
 
             }),
-            providesTags: result => ['Movies']
+            providesTags: result => ['Movies'],
+            extraOptions: {maxRetries: 3},
         }),
         fetchCountries: build.query<fields[], void>({
             query: () => ({
