@@ -1,5 +1,5 @@
 .container {
-  padding: 0 3rem;
+  padding: 0 4rem;
   background-color: black;
   display: flex;
   flex-direction: row;
@@ -36,7 +36,8 @@
   background-color: white;
   border-radius: 1rem;
   position: absolute;
-  top: 3rem;
+  top: 4rem;
+  right: 0;
   box-sizing: border-box;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 }

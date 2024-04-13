@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../store/store";
 import {queryParamsActions} from "../../store/queryParamsSlice";
-import {moviesAPI} from "../../store/services/movieSlice";
+import {moviesAPI} from "../../store/services/moviesSlice";
 import {fields} from "../../store/interfaces/moviesInterface";
 
 export function Filters() {

@@ -7,7 +7,7 @@ import {Page} from "../../components/Page/Page";
 import {queryParamsActions} from "../../store/queryParamsSlice";
 import {MovieCard} from "../../components/MovieCard/MovieCard";
 import {Notifications} from "../../components/Notifications/Notifications";
-import {moviesAPI} from "../../store/services/movieSlice";
+import {moviesAPI} from "../../store/services/moviesSlice";
 
 export function MainPage() {
     const dispatch = useDispatch<AppDispatch>()

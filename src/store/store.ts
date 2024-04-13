@@ -2,7 +2,7 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import movie from "./oneMovieSlice";
 import queryParams from "./queryParamsSlice"
 import search from "./searchSlice"
-import {moviesAPI} from "./services/movieSlice";
+import {moviesAPI} from "./services/moviesSlice";
 
 const rootReducer = combineReducers({
     movie,
